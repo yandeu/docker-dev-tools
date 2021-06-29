@@ -32,6 +32,10 @@ app.get('/heavy-work', (req, res) => {
     res.send(hash.digest('hex'))
 })
 
+app.get('/healthcheck', (req, res) => {
+    res.send('OK')
+})
+
 app.get('*', (req, res) => {
     res.send('404')
 })

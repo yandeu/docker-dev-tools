@@ -2,6 +2,8 @@ FROM node:14-alpine
 
 WORKDIR /usr/src/app
 
+RUN apk add curl
+
 COPY package*.json ./
 
 COPY server.mjs ./

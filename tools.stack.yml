@@ -14,3 +14,9 @@ services:
       - visualizer.autoscale.max=5
       - visualizer.autoscale.up.cpu=0.20
       - visualizer.autoscale.down.cpu=0.10
+    healthcheck:
+      test: curl -f http://localhost:3000/healthcheck || exit 1
+      interval: 10s
+      timeout: 2s
+      retries: 3
+      start_period: 5s
