@@ -1,0 +1,19 @@
+{
+  "name": "docker-dev-tools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "npm run deploy:visualizer && npm run deploy:tools",
+    "deploy:visualizer": "docker stack deploy -c visualizer.stack.yml visualizer",
+    "deploy:tools": "docker stack deploy -c tools.stack.yml tools",
+    "build": "docker build . --no-cache -t yandeu/dev-tools:dev",
+    "push": "docker push yandeu/dev-tools:dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
